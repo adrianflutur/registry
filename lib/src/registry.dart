@@ -167,6 +167,10 @@ class Registry {
   void remove<T>() {
     _log('Remove instance of type $T.');
 
+    if (!_isRegistered<T>()) {
+      throw RegistrantTypeNotFoundException(T);
+    }
+
     final registrant = _getRegistrant<T>();
     registrant.maybeDispose();
 
@@ -337,11 +341,9 @@ class _Registrant<T> {
   }) {
     return _Registrant<T>(
       instance: instance == _sentinel ? this.instance : instance as T?,
-      builder:
-          builder == _sentinel ? this.builder : builder as RegistrantBuilder<T>,
+      builder: builder == _sentinel ? this.builder : builder as RegistrantBuilder<T>,
       registerMode: registerMode ?? this.registerMode,
-      allowOneReregistration:
-          allowOneReregistration ?? this.allowOneReregistration,
+      allowOneReregistration: allowOneReregistration ?? this.allowOneReregistration,
       params: params ?? this.params,
       onDispose: onDispose ?? this.onDispose,
     );

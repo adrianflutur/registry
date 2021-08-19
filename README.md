@@ -1,5 +1,5 @@
 <p align="center">
-<img src="doc/images/logo.png" height="400" alt="registry" />
+<img src="https://raw.githubusercontent.com/adrianflutur/registry/main/doc/images/logo.png" height="400" alt="registry" />
 </p>
 
 [![pub package](https://shields.io/pub/v/registry.svg?style=flat-square&color=blue)](https://pub.dev/packages/registry)
@@ -41,7 +41,7 @@
 
 > Q : Why make another service locator, when there's stuff like get_it and kiwi already available out there?
 >
-> > A: I've had some new features in mind such as theese deep injection params, allowing one re-registration per object type and using a single method for all types of registration modes, and also to practice Dart.
+> > A : I've had some new features in mind such as theese deep injection params, allowing one re-registration per object type and using a single method for all types of registration modes, and also to practice Dart.
 
 <br>
 
@@ -295,4 +295,4 @@ class SecondObject {
 
 ## _**License**_
 
-[MIT](https://github.com/adrianflutur/registry/blob/master/LICENSE)
+[MIT](https://github.com/adrianflutur/registry/blob/main/LICENSE)
